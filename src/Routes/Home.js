@@ -17,7 +17,7 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Item List</h1>
+            <h1>Lista przedmiotów</h1>
             <AddItem onAdd={handleAdd} />
             <List items={items} />
         </div>

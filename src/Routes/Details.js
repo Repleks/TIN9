@@ -12,7 +12,7 @@ const Details = () => {
     }, [id]);
 
     if (!item) {
-        return <h1>Loading...</h1>;
+        return <h1>Ładowanie</h1>;
     }
 
     return (

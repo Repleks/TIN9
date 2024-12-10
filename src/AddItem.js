@@ -24,9 +24,9 @@ const AddItem = ({ onAdd }) => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Add new item"
+                placeholder="Dodaj nowy przedmiot przedmiotów"
             />
-            <button type="submit">Add</button>
+            <button type="submit">Dodaj</button>
         </form>
     );
 };
