@@ -5,7 +5,7 @@ const AddItem = ({ onAdd }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newItem = { id: Date.now(), name};
+        const newItem = { id: Date.now(), name };
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             body: JSON.stringify(newItem),
@@ -14,7 +14,11 @@ const AddItem = ({ onAdd }) => {
             },
         })
             .then((response) => response.json())
-            .then((data) => onAdd(data));
+            .then((data) => {
+                if (onAdd) {
+                    onAdd(data);
+                }
+            });
         setName('');
     };
 
@@ -24,7 +28,7 @@ const AddItem = ({ onAdd }) => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Dodaj nowy przedmiot przedmiotów"
+                placeholder="Dodaj nowy przedmiot"
             />
             <button type="submit">Dodaj</button>
         </form>
